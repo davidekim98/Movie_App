@@ -44,14 +44,16 @@ function MovieDetail(props) {
 	}
 	
 	return (
-		<div style={{width:'100%', margin: '0'}}>
+		<div>
 			{/* Header */}
 				{/* Main Image */}
-				<MainImage 
-					image={Movie.backdrop_path ? `${IMAGE_BASE_URL}w1280${Movie.backdrop_path}` : null}
-					title={Movie.original_title}
-					text={Movie.overview}
-				/>
+				{Movie.backdrop_path &&
+					<MainImage 
+						image={Movie.backdrop_path ? `${IMAGE_BASE_URL}w1280${Movie.backdrop_path}` : null}
+						title={Movie.original_title}
+						text={Movie.overview}
+					/>
+				}
 			
 			
 			{/* Body */}
@@ -85,8 +87,9 @@ function MovieDetail(props) {
 					<Row gutter={[16, 16]}>
 						{Cast && Cast.map((cast, index)=> (
 							<React.Fragment key={index}>
-								<GridCards 
-									image ={cast.profile_path ? `${IMAGE_BASE_URL}w500${cast.profile_path}` : avatarImage}
+								<GridCards
+									castId={cast.id}
+									image={cast.profile_path ? `${IMAGE_BASE_URL}w500${cast.profile_path}` : avatarImage}
 									name={cast.name}
 									character={cast.character}
 								/>

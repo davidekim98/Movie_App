@@ -24,7 +24,13 @@ function GridCards(props) {
 						title={props.name}
 						content={props.character}
 					>
-						<img style={{width:'220px', height:'320px'}} src={props.image} alt={props.name} />
+						<a href ={`/cast/${props.castId}`}>
+							<img 
+								style={{width:'220px', height:'320px'}} 
+								src={props.image} 
+								alt={props.name} 
+							/>
+						</a>
 					</Popover>
 				</div>
 			</Col>

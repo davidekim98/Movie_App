@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { FaCode } from "react-icons/fa";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from '../../Config';
 import MainImage from '../commons/MainImage';
 import GridCards from '../commons/GridCards';
@@ -44,7 +43,7 @@ function LandingPage() {
 				image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
 				title={MainMovieImage.original_title}
 				text={MainMovieImage.overview}
-				/>
+			/>
 		}
 			
 			<div style={{width:'85%', margin:'1rem auto'}}>
